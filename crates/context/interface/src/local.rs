@@ -11,7 +11,7 @@ pub struct FrameStack<T> {
     stack: Vec<T>,
     index: Option<usize>,
 }
-
+ 
 impl<T> Default for FrameStack<T> {
     fn default() -> Self {
         Self::new()

@@ -7,7 +7,7 @@ use std::{rc::Rc, string::String, vec::Vec};
 #[derive(Clone, Debug)]
 pub struct LocalContext {
     /// Interpreter shared memory buffer. A reused memory buffer for calls.
-    pub shared_memory_buffer: Rc<RefCell<Vec<u8>>>,
+    pub shared_memory_buffer: Rc<RefCell<Vec<u8>>>,// check this
     /// Optional precompile error message to bubble up.
     pub precompile_error_message: Option<String>,
 }

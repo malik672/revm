@@ -68,14 +68,14 @@ pub struct TxEnv {
     /// Incorporated as part of the Cancun upgrade via [EIP-4844].
     ///
     /// [EIP-4844]: https://eips.ethereum.org/EIPS/eip-4844
-    pub blob_hashes: Vec<B256>,
+    pub blob_hashes: Vec<B256>,//max here is 6 use smallvec?
 
     /// The max fee per blob gas
     ///
     /// Incorporated as part of the Cancun upgrade via [EIP-4844].
     ///
     /// [EIP-4844]: https://eips.ethereum.org/EIPS/eip-4844
-    pub max_fee_per_blob_gas: u128,
+    pub max_fee_per_blob_gas: u128,//could be u64
 
     /// List of authorizations
     ///
