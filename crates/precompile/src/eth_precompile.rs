@@ -88,7 +88,10 @@ impl Precompiles {
     pub fn homestead() -> &'static Self {
         static INSTANCE: OnceLock<Precompiles> = OnceLock::new();
         INSTANCE.get_or_init(|| {
-            let mut precompiles = Precompiles { eth_precompile_addresses: HOMESTEAD_PRECOMPILES, ..Default::default() };
+            let mut precompiles = Precompiles {
+                eth_precompile_addresses: HOMESTEAD_PRECOMPILES,
+                ..Default::default()
+            };
             precompiles.set(1, secp256k1::ec_recover_run);
             precompiles.set(2, hash::sha256_run);
             precompiles.set(3, hash::ripemd160_run);
