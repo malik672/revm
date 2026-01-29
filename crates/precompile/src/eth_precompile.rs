@@ -1,6 +1,6 @@
 //! Ethereum precompiles implementation with bitmask and lookup table for O(1) access.
 //! Goes to 128 because of Fjord
-use std::sync::OnceLock;
+use crate::OnceLock;
 
 use primitives::Address;
 
@@ -317,7 +317,6 @@ pub fn address_to_index(address: &Address) -> Option<usize> {
     // Check if first 19 bytes are all zeros
     if bytes[..19].iter().all(|&b| b == 0) {
         let last_byte = bytes[19] as usize;
-        println!("{:?}", last_byte);
         // Only addresses 0x01-0x3f can fit in the lookup table
         if last_byte > 0 && last_byte < MAX_PRECOMPILE_INDEX {
             return Some(last_byte);
